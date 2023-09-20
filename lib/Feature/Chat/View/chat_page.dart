@@ -18,7 +18,7 @@ class _ChatPageState extends State<ChatPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: MyAppBar(context: context, onTap: onTap),
+      appBar: MyAppBar(context: context, onTap: () {}),
     );
   }
 }
