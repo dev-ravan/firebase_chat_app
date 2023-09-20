@@ -5,7 +5,7 @@ import 'package:provider/provider.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'Common/View/splash.dart';
 import 'Feature/Auth/Controller/login.dart';
-import 'Feature/Auth/Controller/sign_in.dart';
+import 'Feature/Auth/Controller/sign_up.dart';
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();

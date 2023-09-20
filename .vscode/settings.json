@@ -1,6 +1,7 @@
 {
     "cSpell.words": [
-        "cupertino"
+        "cupertino",
+        "Firestore"
     ],
 
     "editor.codeActionsOnSave": {

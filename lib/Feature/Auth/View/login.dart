@@ -39,7 +39,8 @@ class _LoginState extends State<Login> {
                 // Login Text
                 MyTexts().TitleText(text: "Login"),
                 gap5,
-                MyTexts().MiniText(text: "Please login to continue app"),
+                MyTexts().DMSansNormalBlackText(
+                    text: "Please login to continue app", size: 15),
                 gap30,
 
                 // Email Field
@@ -64,7 +65,7 @@ class _LoginState extends State<Login> {
                           validator: (value) {
                             if (value!.isEmpty) {
                               return "Please enter valid password";
-                            } else if (value.length <= 6) {
+                            } else if (value.length < 6) {
                               return "Password should at least 6 digits";
                             }
                             return null;
@@ -90,7 +91,8 @@ class _LoginState extends State<Login> {
                 gap20,
                 Row(
                   children: [
-                    MyTexts().MiniText(text: "Don't have an account?"),
+                    MyTexts().DMSansNormalBlackText(
+                        text: "Don't have an account?", size: 15),
                     gap5,
                     MyButtons().redButton(
                         title: "Register",

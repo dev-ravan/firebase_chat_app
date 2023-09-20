@@ -32,11 +32,11 @@ class MyTexts {
             fontWeight: FontWeight.bold));
   }
 
-  Widget MiniText({required String text}) {
+  Widget DMSansNormalBlackText({required String text, required double size}) {
     return Text(text,
         style: TextStyle(
             color: Palette.black,
-            fontSize: 15,
+            fontSize: size,
             fontFamily: "DMSans",
             fontWeight: FontWeight.normal));
   }

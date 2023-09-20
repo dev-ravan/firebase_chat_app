@@ -14,10 +14,19 @@ class SignUpProvider extends ChangeNotifier {
   final newPasswordController = TextEditingController();
   final confirmPasswordController = TextEditingController();
 
+  // reset sign up form
+  void resetSignUpForm() {
+    emailController.clear;
+    newPasswordController.clear;
+    confirmPasswordController.clear;
+  }
+
   // Sign Up
   void signUp({required BuildContext context}) {
     try {
       final authProvider = Provider.of<AuthService>(context, listen: false);
+
+      // Navigate to the Login Page
       authProvider
           .signUpWithEmailAndPassword(
               email: emailController.text, password: newPasswordController.text)
@@ -25,6 +34,9 @@ class SignUpProvider extends ChangeNotifier {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => const Login()))
               });
+
+      // Once credentials was correct reset the login form
+      resetSignUpForm();
     } catch (e) {
       SnackBars.showSnackBar(
           context: context, message: "Something went wrong !");

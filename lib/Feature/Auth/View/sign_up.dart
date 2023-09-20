@@ -6,7 +6,7 @@ import '../../../Res/colors.dart';
 import '../../../Res/sizes.dart';
 import '../../../Res/text_fields.dart';
 import '../../../Res/texts.dart';
-import '../Controller/sign_in.dart';
+import '../Controller/sign_up.dart';
 
 class SignUp extends StatefulWidget {
   const SignUp({super.key});
@@ -37,8 +37,8 @@ class _SignUpState extends State<SignUp> {
                 // Login Text
                 MyTexts().TitleText(text: "Sign Up"),
                 gap5,
-                MyTexts()
-                    .MiniText(text: "Require information for account creation"),
+                MyTexts().DMSansNormalBlackText(
+                    size: 15, text: "Require information for account creation"),
                 gap30,
 
                 Form(
@@ -63,7 +63,7 @@ class _SignUpState extends State<SignUp> {
                             validator: (value) {
                               if (value!.isEmpty) {
                                 return "Please enter valid password";
-                              } else if (value.length <= 6) {
+                              } else if (value.length < 6) {
                                 return "Password should at least 6 digits";
                               }
                               return null;
@@ -78,7 +78,7 @@ class _SignUpState extends State<SignUp> {
                             validator: (value) {
                               if (value!.isEmpty) {
                                 return "Please enter valid password";
-                              } else if (value.length <= 6) {
+                              } else if (value.length < 6) {
                                 return "Password should at least 6 digits";
                               }
                               return null;
@@ -105,7 +105,8 @@ class _SignUpState extends State<SignUp> {
 
                 Row(
                   children: [
-                    MyTexts().MiniText(text: "Already you have an account?"),
+                    MyTexts().DMSansNormalBlackText(
+                        text: "Already you have an account?", size: 15),
                     gap5,
                     MyButtons().redButton(
                         title: "Login",
