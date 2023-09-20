@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:my_chat_app/Feature/Chat/View/chat.dart';
 import 'package:my_chat_app/Res/colors.dart';
 import 'package:my_chat_app/Res/texts.dart';
 import 'package:my_chat_app/Utils/app_bar.dart';
@@ -65,7 +66,15 @@ class _HomeState extends State<Home> {
           contentPadding:
               const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
           title: MyTexts().DMSansNormalBlackText(text: data["email"], size: 18),
-          onTap: () {},
+          onTap: () {
+            // Navigate to the chat page using the uuid and email
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => ChatPage(
+                        receiverEmail: data["email"],
+                        receiverUid: data["uuid"])));
+          },
         ),
       );
     } else {

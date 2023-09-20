@@ -30,4 +30,31 @@ class MyTextFields {
       ),
     );
   }
+
+// Message text field
+  Widget sendMessageField({
+    required TextEditingController controller,
+    required Function onTap,
+  }) {
+    return TextFormField(
+      controller: controller,
+      decoration: InputDecoration(
+        suffixIcon: IconButton(
+            icon: const Icon(Icons.send), onPressed: onTap as void Function()),
+        hintText: "Type here..",
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(15),
+        ),
+        enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(15),
+            borderSide: BorderSide(color: Palette.grey)),
+        focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(15),
+            borderSide: BorderSide(color: Palette.black)),
+        errorBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(15),
+            borderSide: BorderSide(color: Palette.red)),
+      ),
+    );
+  }
 }

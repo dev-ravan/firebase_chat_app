@@ -41,6 +41,15 @@ class MyTexts {
             fontWeight: FontWeight.normal));
   }
 
+  Widget DMSansNormalWhiteText({required String text, required double size}) {
+    return Text(text,
+        style: TextStyle(
+            color: Palette.white,
+            fontSize: size,
+            fontFamily: "DMSans",
+            fontWeight: FontWeight.normal));
+  }
+
   Widget MiniRedText({required String text}) {
     return Text(text,
         style: TextStyle(

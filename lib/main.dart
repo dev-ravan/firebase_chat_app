@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_chat_app/Feature/Auth/Repo/auth_service.dart';
+import 'package:my_chat_app/Feature/Chat/Controller/chat.dart';
 import 'package:my_chat_app/firebase_options.dart';
 import 'package:provider/provider.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -26,6 +27,8 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider<AuthService>(create: (context) => AuthService()),
         ChangeNotifierProvider<SignUpProvider>(
             create: (context) => SignUpProvider()),
+        ChangeNotifierProvider<ChatProvider>(
+            create: (context) => ChatProvider()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
